@@ -6,7 +6,6 @@ whats working? : <br>
 -search function <br>
 
 work in progress : <br>
--pinjam buku <br>
 -book management by admin <br>
 -sql injection protection <br>
 -ui <br>
