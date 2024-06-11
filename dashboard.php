@@ -1,17 +1,25 @@
 <?php include_once("css.php"); ?>
-<div class="collapse" id="navbarToggleExternalContent">
-  <div class="bg-dark p-4">
-    <h5 class="text-white h4">Collapsed content</h5>
-    <span class="text-muted">Toggleable via the navbar brand.</span>
-  </div>
-</div>
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    
+    
+
+    <a class="navbar-brand" href="index.php">Perpustal</a>
+      <ul class="nav justify-content-end">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Setting
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="profil.php">Profile</a></li>
+            <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+          </ul>
+        </li>
+        </ul>
+    </div>
   </div>
 </nav>
+
 <?php  
     session_start();
     include 'connection.php';
@@ -55,4 +63,3 @@
         <a href="logout.php">
                 Logout
         </a>
-</html>

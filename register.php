@@ -10,7 +10,5 @@
     <button type="submit" name="input" value="SUBMIT">
         SUBMIT
     </button><br>
-    <a onclick="history.back()">
-        BACK TO MENU
-    </a>
+    <a href="index.php">Back to menu</a>
 </form>        
