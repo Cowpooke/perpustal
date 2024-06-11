@@ -1,5 +1,5 @@
 <?php
-$id   = $_GET['id'];
+$id = $_GET['id'];
 
 include "connection.php";
 $sql = "SELECT * FROM buku WHERE id_buku = $id";
@@ -34,7 +34,7 @@ if ($result == null){
 };
 ?>
 <form action="kode_peminjaman.php" method="post">
-    <input type="text" name="id_buku" value="<?= $td['id_buku'];  ?>" hidden>
+    <input type="text" name="id_buku" value="<?= $id;  ?>" hidden>
     <button type="submit" value="submit" name="input">
         pinjam
     </button>

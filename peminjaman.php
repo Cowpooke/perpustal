@@ -16,7 +16,7 @@
         echo 'Status Peminjaman : Belum ada data';
     } else {
         if ($data['status'] == 'pending') {
-            echo "Status peminjaman : ".$data['status'];
+            echo "Status peminjaman : ".$data['status']."<br>";
             echo 'kode peminjaman : '.$data['id_peminjaman'];
         } elseif ($data['status'] == 'aktif'){
             echo "Status peminjaman : ".$data['status'];
@@ -51,17 +51,24 @@
                 <td>{$td['tgl_kembali']}</td>
                 <td>{$td['status']}</td>
                 <td>";
-    $date1 = new DateTime($td['tgl_kembali']);
-    $date2 = new DateTime(date('Y-m-d'));
+    $date1 = (new DateTime($td['tgl_kembali']));
+    $date2 = (new DateTime(date('Y-m-d')));
+    $date3 = (new DateTime($td['tgl_pinjam']));
 
-    $interval = $date1->diff($date2);
+    $interval = $date2->diff($date3);
     $days_between = $interval->days;
     $value = floatval($days_between);
-    if ($value > 0){
-        $denda = 2000*$value;
-        echo 'Rp.'.$denda;
+
+    $interval2 = $date1->diff($date3);
+    $days_between2 = $interval2->days;
+    $value2 = floatval($days_between2);
+
+    $denda = ($value - $value2) * 1000;
+
+    if ($value <= 0){
+        echo 'Rp.0';
     } else {
-        echo 'Rp. 0';
+        echo 'Rp.'.$denda;
     }
                       
     echo "</td>

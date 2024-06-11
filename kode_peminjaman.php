@@ -1,11 +1,7 @@
 <?php
     session_start();
     include 'connection.php';
-    if (!isset($_SESSION['username'])) {
-        header("Location: index.php");
-    } 
-    if (isset($_POST['submit'])) {
-        $user = $_SESSION['username'];
+        $username = $_SESSION['username'];
         $id_buku = $_POST['id_buku'];
 
         $check = "select * from buku where id_buku = $id_buku";
@@ -17,25 +13,21 @@
         $result = mysqli_query($con, $q_update);
 
         $tgl_pinjam = date('Y-m-d');
+
         $tgl_kembali = date('Y-m-d', strtotime($tgl_pinjam. ' + 5 days'));
-        $queryInsert = "INSERT INTO peminjaman (id_buku, tgl_pinjam, tgl_kembali) VALUES ($id_buku, $tgl_pinjam, $tgl_kembali)";
+
+        $queryInsert = "insert into peminjaman (tgl_pinjam, tgl_kembali, username, id_buku, status) values ('$tgl_pinjam', '$tgl_kembali', '$username', $id_buku, 'pending')";
 
         if (mysqli_query($con, $queryInsert)) {
         $lastID = mysqli_insert_id($con);
 
-        $queryRetrieve = "SELECT * FROM peminjaman WHERE id = $lastID";
+        $queryRetrieve = "SELECT * FROM peminjaman WHERE id_peminjaman = $lastID";
         $result = mysqli_query($con, $queryRetrieve);
-
-        if ($result) {
-            $row = mysqli_fetch_assoc($result);
-            echo "<h3>Newly Added User:</h3>";
-            echo "<p>ID: " . $row['id'] . "</p>";
-        } else {
-            echo "Error retrieving data: " . mysqli_error($con);
+        $row = mysqli_fetch_assoc($result);
+        $id_peminjaman = $row['id_peminjaman'];
+        echo "Kode Peminjaman : ".$id_peminjaman."<br>";
+        echo "Tanggal dikembalikan : ".$tgl_kembali."<br>";
+        echo "<a href='dashboard.php'>menu</a>";
         }
-        } else {
-        echo "Error inserting data: " . mysqli_error($con);
-        }
-    }
 
 ?>
