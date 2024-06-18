@@ -66,11 +66,17 @@
 
     $denda = ($value - $value2) * 1000;
 
-    if ($value <= 0){
-        echo 'Rp.0';
+    if ($td['status'] == 'pending'){
+        echo 'Rp.0'; 
     } else {
-        echo 'Rp.'.$denda;
+        if ($value <= 0){
+            echo 'Rp.0';
+        } else {
+            echo 'Rp.'.$denda;
+        }
     }
+
+    
                       
     echo "</td>
         </tr>";

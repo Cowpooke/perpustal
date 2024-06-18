@@ -26,7 +26,6 @@
         $row = mysqli_fetch_assoc($result);
         $id_peminjaman = $row['id_peminjaman'];
         echo "Kode Peminjaman : ".$id_peminjaman."<br>";
-        echo "Tanggal dikembalikan : ".$tgl_kembali."<br>";
         echo "<a href='dashboard.php'>menu</a>";
         }
 
