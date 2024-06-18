@@ -34,8 +34,8 @@
     //---------------------Users Table-----------------------------
     $sqlTablePeminjaman = "CREATE TABLE if not exists peminjaman (
                             id_peminjaman INT(10) AUTO_INCREMENT PRIMARY KEY,
-                            tgl_pinjam DATE NOT NULL,
-                            tgl_kembali DATE NOT NULL,
+                            tgl_pinjam DATE,
+                            tgl_kembali DATE,
                             username VARCHAR(20) NOT NULL,
                             id_buku INT(10) NOT NULL,
                             status enum('aktif','pending','tidak'),

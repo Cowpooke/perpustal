@@ -12,11 +12,11 @@
         $q_update = "UPDATE buku SET stok = $stock_update WHERE id_buku = $id_buku";
         $result = mysqli_query($con, $q_update);
 
-        $tgl_pinjam = date('Y-m-d');
+        //$tgl_pinjam = date('Y-m-d');
 
-        $tgl_kembali = date('Y-m-d', strtotime($tgl_pinjam. ' + 5 days'));
+        //$tgl_kembali = date('Y-m-d', strtotime($tgl_pinjam. ' + 5 days'));
 
-        $queryInsert = "insert into peminjaman (tgl_pinjam, tgl_kembali, username, id_buku, status) values ('$tgl_pinjam', '$tgl_kembali', '$username', $id_buku, 'pending')";
+        $queryInsert = "insert into peminjaman (username, id_buku, status) values ('$username', $id_buku, 'pending')";
 
         if (mysqli_query($con, $queryInsert)) {
         $lastID = mysqli_insert_id($con);
