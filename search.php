@@ -1,9 +1,11 @@
+
 <form action="" method="get">
     <input type="text" name="judul">
-    <button class="button-submit" type="submit" name="submit" value="submit">
+    <button class=" btn btn-primary button-submit" type="submit" name="submit" value="submit">
         cari
     </button>
 </form>
+
 <?php
     include 'connection.php';
     if (isset($_GET['submit'])) {

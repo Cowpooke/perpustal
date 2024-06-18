@@ -1,6 +1,6 @@
 <?php  
+    include 'top_bar.php';
     include 'connection.php';
-    session_start();
     if (!isset($_SESSION['username'])) {
         header("Location: index.php");
     }
@@ -14,7 +14,5 @@
                 echo "Username : $user <br>";
                 echo "email : $email <br>";
                 echo "role : $role <br>";
+    include 'bottom_bar.php';
 ?>
-
-<a href="logout.php">Logout</a>
-<a href="dashboard.php">BACK TO MENU</a>

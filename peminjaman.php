@@ -1,5 +1,6 @@
 <?php
-    session_start();
+    include 'top_bar.php';
+    echo '<div class="container-fluid">';
     if (!isset($_SESSION['username'])) {
         header("Location: index.php");
     }
@@ -25,8 +26,8 @@
     
     
 ?>
- 
-<table>
+
+<table class="table">
     <thead>
         <tr>
             <th> </th>
@@ -78,5 +79,7 @@
 ?>
     </tbody>
 </table>
-<a class="button" href="dashboard.php">back</a>
 
+</div>
+
+<?php include 'bottom_bar.php'; ?>
