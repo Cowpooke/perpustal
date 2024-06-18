@@ -1,5 +1,4 @@
 <head>
-    <link rel="stylesheet" href="login.css">
     <?php include 'css.php'; ?>
     <title>Login</title>
     <style>
