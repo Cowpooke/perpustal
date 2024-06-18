@@ -9,7 +9,7 @@
     if ($check !== null){
         $msg = "username is already exists";
         echo "<h2>".$msg."</h2>";
-        header('Location:register.php');
+        echo '<meta http-equiv="refresh" content="0;url=register.php">';
     } else {
         $sql = "insert into users 
             (username, email, password, role)
@@ -17,6 +17,6 @@
             ('$username','$email','$password','$roles')";
         $result = mysqli_query($con,$sql);
         echo "<h2>Data Saved</h2>";
-        header('Location:login.php');
+        echo '<meta http-equiv="refresh" content="0;url=login.php">';
     }    
 ?>

@@ -9,7 +9,7 @@
 
     include 'connection.php';
     if ($input == 'submit') {
-        $sqlq = "INSERT INTO BUKU (judul,penulis,penerbit,genre,deskripsi,stok) VALUES ('$judul','$penulis','$penerbit','$genre','$deskripsi','$stok')";
+        $sqlq = "INSERT INTO buku (judul,penulis,penerbit,genre,deskripsi,stok) VALUES ('$judul','$penulis','$penerbit','$genre','$deskripsi','$stok')";
         $save = mysqli_query($con, $sqlq);
         echo "data input berhasil";
         echo '
@@ -22,7 +22,7 @@
 
     } elseif ($input == 'update') {
         $id_buku = $_POST['id_buku'];
-        $sqlq = "UPDATE BUKU SET 
+        $sqlq = "UPDATE buku SET 
                     judul = '$judul',
                     penulis = '$penulis',
                     penerbit = '$penerbit',

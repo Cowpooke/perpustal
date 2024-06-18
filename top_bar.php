@@ -1,4 +1,4 @@
-<?php ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,7 +19,6 @@
                 <div class="sidebar-heading border-bottom bg-light">Perpustal</div>
                 <div class="list-group list-group-flush">
                     <?php
-                    session_start();
                     include 'connection.php';
                     if (!isset($_SESSION['username'])) {
                         header("Location: index.php");

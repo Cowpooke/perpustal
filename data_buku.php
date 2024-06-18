@@ -1,4 +1,3 @@
-
 <?php
     include 'top_bar.php';
     include 'connection.php';
@@ -26,7 +25,7 @@
                     </thead>
                     <tbody>
                 ";
-                $sqlq = "SELECT * FROM BUKU";
+                $sqlq = "SELECT * FROM buku";
                 $result = mysqli_query($con, $sqlq);
                 $num = 1;
                 while ($td = mysqli_fetch_assoc($result)) {

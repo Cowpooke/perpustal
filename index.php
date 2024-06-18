@@ -1,7 +1,7 @@
 <?php
     ob_start();
-    include 'connection.php';
     session_start();
+    include 'connection.php';
     if (isset($_SESSION['username'])) {
         header("Location: dashboard.php");
     }
@@ -13,10 +13,10 @@
     <a class="navbar-brand" href="index.php">Perpustal</a>
       <ul class="nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link" href="Login.php">Login</a>
+            <a class="nav-link" href="register.php">Login</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="Register.php">Sign Up</a>
+            <a class="nav-link" href="register.php">Sign Up</a>
         </li>
         </ul>
     </div>
