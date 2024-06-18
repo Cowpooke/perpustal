@@ -1,4 +1,5 @@
 <?php
+include 'top_bar.php';
 $id = $_GET['id'];
 
 include "connection.php";
@@ -8,6 +9,7 @@ if (!$result) {
     die("fail");
 }
 
+echo '<div class="container-fluid">';
 $td = mysqli_fetch_assoc($result);
 
 echo "Judul : {$td['judul']} <br>";
@@ -32,6 +34,16 @@ if ($result == null){
         echo "Deskripsi : {$req['deskripsi']} <br>";
     };
 };
+$user = $_SESSION['username'];
+                    $sql = "SELECT role FROM users WHERE username='$user'";
+                                $result = mysqli_query($con, $sql);
+                                $row = mysqli_fetch_assoc($result);
+                                $role = $row['role'];
+                                if($row['role'] == "admin") {
+                                    
+                                } elseif ($row['role'] == "member") {
+                                    
+                                
 ?>
 <form action="kode_peminjaman.php" method="post">
     <input type="text" name="id_buku" value="<?= $id;  ?>" hidden>
@@ -39,3 +51,6 @@ if ($result == null){
         pinjam
     </button>
 </form>
+</div>
+
+<?php }; include 'bottom_bar.php'; ?>

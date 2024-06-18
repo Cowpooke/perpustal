@@ -1,11 +1,9 @@
-
 <form action="" method="get">
     <input type="text" name="judul">
     <button class=" btn btn-primary button-submit" type="submit" name="submit" value="submit">
         cari
     </button>
 </form>
-
 <?php
     include 'connection.php';
     if (isset($_GET['submit'])) {
@@ -16,7 +14,7 @@
         $num = 1;
         while ($td = mysqli_fetch_assoc($execute)) {
         echo "
-            <table>
+            <table class='table'>
                 <thead>
                     <tr>
                     <th></th>
